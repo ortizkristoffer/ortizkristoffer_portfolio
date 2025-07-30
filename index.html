@@ -53,6 +53,27 @@
               <a class="nav-link" href="#services">Services</a>
             </li>
             <li class="nav-item">
+              <div class="dropdown">
+                <button
+                  class="btn nav-link dropdown-toggle custom-dropdown"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Projects
+                </button>
+                <ul class="dropdown-menu custom-dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#projects">Software</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#graphics">Graphics</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
@@ -109,46 +130,280 @@
         <div class="icons">
           <img src="icons/html.png" alt="html_logo" />
           <img src="icons/css.png" alt="css_logo" />
-          <img src="icons/js.png" alt="javascript_logo" /><img
-            src="icons/angular.png"
-            alt="angular_logo"
-          />
-
+          <img src="icons/js.png" alt="javascript_logo" />
+          <img src="icons/java.png" alt="java_logg" />
           <img src="icons/csharp.png" alt="csharp_logo" />
           <img src="icons/springboot.png" alt="" /><img
-            src="icons/bootstrap.png"
-            alt="bootstrap_logo"
-          />
-          <img src="icons/java.png" alt="java_logg" /><img
-            src="icons/figma.png"
-            alt=""
-          />
+            src="icons/angular.png"
+            alt="angular_logo"
+          /><img src="icons/bootstrap.png" alt="bootstrap_logo" />
+          <img src="icons/figma.png" alt="" />
         </div>
       </div>
 
-      <div class="profile-div d-flex align-items-end">
+      <div class="profile-div d-flex align-items-center">
         <img class="profile" src="sources/profile.png" alt="Profile picture" />
       </div>
     </div>
 
     <div id="services" class="container intro-section">
-      <div>
-        <h2>Hello, I'm</h2>
-        <h1>Kristoffer Amican Ortiz</h1>
-        <h3>Software Developer</h3>
-        <p>
-          Your tech partner in building fast, functional, and future-ready apps.
-        </p>
-        <p>From concept to code — I bring your vision to life.</p>
-        <p>Let’s build something your users will love.</p>
-        <a href="#contact">Contact</a>
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 d-flex">
+          <div class="card text-white w-100">
+            <img
+              src="sources/webdev.jpg"
+              class="card-img-top img-fluid"
+              alt="..."
+              style="height: 200px; object-fit: cover"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Software Development</h5>
+              <p class="card-text text-justify p-2">
+                I do software development and create responsive, user-friendly
+                websites with a focus on both front-end and back-end
+                functionality. As a full-stack developer, I work with
+                technologies like HTML, CSS, JavaScript, and Bootstrap on the
+                front end, and use tools like Node.js, ASP.NET, SpringBoot or
+                SQL for the back end. My goal is to build complete, efficient,
+                and scalable web applications that deliver a seamless user
+                experience.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for Card 2 -->
+        <div class="col-md-4 d-flex">
+          <div class="card text-white w-100">
+            <img
+              src="sources/figma.jpg"
+              class="card-img-top img-fluid"
+              alt="..."
+              style="height: 200px; object-fit: cover"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">UI/UX Design</h5>
+              <p class="card-text text-justify p-2">
+                I specialize in web UI/UX design and development, creating
+                interfaces that are both visually appealing and easy to use. I
+                focus on designing user-centered layouts and bringing them to
+                life using HTML, CSS, JavaScript, and responsive frameworks. My
+                goal is to deliver smooth, accessible, and engaging web
+                experiences that meet both user needs and business goals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 d-flex">
+          <div class="card text-white w-100">
+            <img
+              src="sources/dot.jpg"
+              class="card-img-top img-fluid"
+              alt="..."
+              style="height: 200px; object-fit: cover"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Graphic Design</h5>
+              <p class="card-text text-justify p-2">
+                Graphic design involves creating compelling visuals that capture
+                attention and communicate ideas clearly. Using tools like Adobe
+                Photoshop, Illustrator, and Canva, I design logos, posters,
+                social media content, and marketing materials. Each project is
+                crafted to align with the brand’s identity and connect
+                effectively with its audience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="projects"
+      class="container d-flex justify-content-around align-items-center"
+    >
+      <div
+        id="projectCarousel"
+        class="carousel slide mt-5"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <!-- Controls -->
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row align-items-center project-slide">
+              <div class="col-md-6">
+                <img
+                  src="sources/figma.jpg"
+                  class="img-fluid shadow"
+                  alt="Project 1"
+                />
+              </div>
+              <div
+                class="col-md-6 d-flex flex-column justify-content-start p-5 text-white"
+              >
+                <h3 class="text-justify mb-4">
+                  CitiSync – Web-Based Transaction Processing System for Palmera
+                  3 and 4 Homeowners’ Association
+                </h3>
+                <p class="text-justify">
+                  CitiSync is a web-based platform designed to assist
+                  homeowners’ association officers in managing resident records
+                  and automating key processes such as monthly dues collection,
+                  document requests, and amenity reservations. The system
+                  improves administrative efficiency and provides transparency
+                  for both officers and residents.
+                </p>
+                <p class="text-justify">
+                  Developed a full-stack solution with a responsive user
+                  interface and role-based access control, providing separate
+                  dashboards and permissions for Admin and Resident users. The
+                  system supports secure login, real-time updates, and
+                  mobile-friendly access for better user experience.
+                </p>
+                <p class="text-justify">
+                  <strong>Technologies Used:</strong> ASP.NET Core MVC, C#,
+                  HTML5, CSS3, JavaScript, Bootstrap, jQuery, AJAX, and MySQL.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row align-items-center project-slide">
+              <div class="col-md-6">
+                <img
+                  src="sources/webdev.jpg"
+                  class="img-fluid shadow"
+                  alt="Project 2" 
+                />
+              </div>
+              <div
+                class="col-md-6 d-flex flex-column justify-content-start p-5 text-white"
+              >
+                <h3 class="text-justify">
+                  CitiSync – Web-Based Transaction Processing System for Palmera
+                  3 and 4 Homeowners’ Association
+                </h3>
+                <p class="fw-semibold">STI College, December 2025</p>
+                <p class="text-justify">
+                  CitiSync is a web-based platform designed to assist
+                  homeowners’ association officers in managing resident records
+                  and automating key processes such as monthly dues collection,
+                  document requests, and amenity reservations.
+                </p>
+                <p class="text-justify">
+                  Developed a full-stack solution with a responsive user
+                  interface and role-based access control, providing separate
+                  dashboards and permissions for Admin and Resident users.
+                </p>
+                <p class="text-justify">
+                  <strong>Technologies Used:</strong> ASP.NET Core MVC, C#,
+                  HTML5, CSS3, JavaScript, Bootstrap, jQuery, AJAX, and MySQL.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row align-items-center project-slide">
+              <div class="col-md-6">
+                <img
+                  src="sources/bg.png"
+                  class="img-fluid shadow"
+                  alt="Project 3"
+                />
+              </div>
+              <div
+                class="col-md-6 d-flex flex-column justify-content-start p-5 text-white"
+              >
+                <h3 class="text-justify">
+                  CitiSync – Web-Based Transaction Processing System for Palmera
+                  3 and 4 Homeowners’ Association
+                </h3>
+                <p class="fw-semibold">STI College, December 2025</p>
+                <p class="text-justify">
+                  CitiSync is a web-based platform designed to assist
+                  homeowners’ association officers in managing resident records
+                  and automating key processes such as monthly dues collection,
+                  document requests, and amenity reservations.
+                </p>
+                <p class="text-justify">
+                  Developed a full-stack solution with a responsive user
+                  interface and role-based access control, providing separate
+                  dashboards and permissions for Admin and Resident users.
+                </p>
+                <p class="text-justify">
+                  <strong>Technologies Used:</strong> ASP.NET Core MVC, C#,
+                  HTML5, CSS3, JavaScript, Bootstrap, jQuery, AJAX, and MySQL.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="graphics"
+      class="container d-flex justify-content-around align-items-center"
+    >
+      <div class="container small-grid">
+        <div class="row row-cols-2 g-3">
+          <div class="col graphic-img">
+            <img src="graphics/4.png" alt="Image 4" />
+          </div>
+          <div class="col graphic-img">
+            <img src="graphics/5.png" alt="Image 5" />
+          </div>
+          <div class="col graphic-img">
+            <img src="graphics/7.png" alt="Image 3" />
+          </div>
+          <div class="col graphic-img">
+            <img src="graphics/3.png" alt="Image 7" />
+          </div>
+        </div>
+      </div>
+      <div class="container small-grid">
+        <div class="row row-cols-1 g-3">
+          <div class="col graphic-img">
+            <img src="graphics/text.png" alt="Image 4" />
+          </div>
+          <div class="col graphic-img">
+            <img src="graphics/6.png" alt="Image 5" />
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Contact Section -->
     <div id="contact" class="container">
       <div
-        class="container d-flex justify-content-between align-items-end flex-wrap"
+        class="container d-flex justify-content-between align-items-center flex-wrap"
       >
         <div class="row align-items-center justify-content-center">
           <!-- Intro Text -->
@@ -164,26 +419,33 @@
             </p>
 
             <div class="contact-icons d-flex p-md-3">
-              <div>
+              <div class="contact-item">
                 <img src="icons/linkedin.png" alt="linkedin_logo" />
-                <a href="https://www.linkedin.com/in/kristofferortiz/">linkedin/ortizkritoffer</a>
-                
+                <a href="https://www.linkedin.com/in/kristofferortiz/"
+                  >Kristoffer Ortiz</a
+                >
               </div>
-              <div>
+              <div class="contact-item">
                 <img src="icons/gmail.png" alt="gmail_logo" />
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFdPnSvzqRZNXMTkqFWZbcJJZqMcSjqjMKqgmWPLPTDHrTHNnDgqCXJcWLvGfsQJNpjvbX">gmail/ortizkristoffer</a>
+                <a
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFdPnSvzqRZNXMTkqFWZbcJJZqMcSjqjMKqgmWPLPTDHrTHNnDgqCXJcWLvGfsQJNpjvbX"
+                  >kristofferaortiz@gmail.com</a
+                >
               </div>
-              <div>
-                <img src="icons/phone.png" alt="phone_logo" />
-                +639684989399
-              </div>
-              <div>
+
+              <div class="contact-item">
                 <img src="icons/facebook.png" alt="facebook_logo" />
-                <a href="https://www.facebook.com/kristoffer.ortiz.12">facebook/kristofferamicanortiz</a>
+                <a href="https://www.facebook.com/kristoffer.ortiz.12"
+                  >Kristoffer Amican Ortiz</a
+                >
               </div>
-              <div>
+              <div class="contact-item">
                 <img src="icons/instagram.png" alt="instagram_logo" />
-                <a href="https://www.instagram.com/kristortiz/">instagram/kristortiz</a>
+                <a href="https://www.instagram.com/kristortiz/">@kristortiz</a>
+              </div>
+              <div class="contact-item">
+                <img src="icons/phone.png" alt="phone_logo" />
+                <p>+63 968 498 9399</p>
               </div>
             </div>
           </div>

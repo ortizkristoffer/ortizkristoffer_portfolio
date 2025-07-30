@@ -21,7 +21,41 @@ body {
 }
 .container {
   height: 100vh;
+  padding-top: 2rem;
 }
+
+/* Make dropdown button look like other nav links */
+.custom-dropdown {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.custom-dropdown:hover,
+.custom-dropdown:focus {
+  color: #ddd;
+  background-color: transparent;
+}
+
+/* Make the dropdown menu match the navbar dark background */
+.custom-dropdown-menu {
+  background-color: #212529; /* dark gray (matches navbar-dark default) */
+  border: none;
+}
+
+/* Make dropdown items white */
+.custom-dropdown-menu .dropdown-item {
+  color: white;
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* subtle white highlight */
+  color: white;
+}
+
+
+
+
 
 .intro-section {
   min-height: 100vh;
@@ -34,6 +68,7 @@ body {
   flex-direction: column;
 }
 
+
 .intro-section h1,
 .text-content h1 {
   font-family: "Domine", sans-serif;
@@ -42,7 +77,7 @@ body {
   transition: 0.4s ease-in-out;
 }
 
-h4{
+h4 {
   color: #00d9ff;
 }
 .intro-section h2 {
@@ -92,12 +127,14 @@ h4{
 }
 
 .profile-div {
-  height: 100%; /* adjust to control how low image goes */
+  height: 100%; 
+  
 }
 
 .profile {
   max-height: 100%;
   width: auto;
+  border-bottom: 3px solid #ccc; 
 }
 
 .education h6 {
@@ -121,7 +158,8 @@ h4{
   margin-top: 1.2rem;
 }
 
-.icons img, .contact-icons img{
+.icons img,
+.contact-icons img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -149,20 +187,134 @@ form textarea:focus {
   border-color: #007bff;
 }
 
-.form{
+.form {
   background-color: #203a43;
 }
 
-.text-justify{
+.text-justify {
   text-align: justify;
 }
 
-.contact-icons{
+.contact-icons {
   flex-direction: column;
-  gap: 10px;
+
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between image and link */
+  margin: 10px 0;
+}
+
+.contact-item img {
+  width: 35px;
+  height: 35px;
+}
+.contact-item p{
+  align-self: center;
+  margin: 0;
+  font-weight: 500;
+  font-family: 'Segoe UI', sans-serif;
+
+}
+.contact-item a, .contact-item {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+  color: #799EFF;
+}
+
+.card{
+  background-color: #203a43;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  
+}
+
+.row{
+  margin-top: 5rem;
+}
+
+.card h5{
+  font-family: "Domine", sans-serif;
+  font-size: 1.2rem;
+  color: #00d9ff;
+  transition: 0.4s ease-in-out;
+}
+
+.carousel-item {
+  height: 500px;
+  
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#graphics {
+  padding: 40px 0;
 }
 
 
+.small-grid img {
+  width: 100%;
+  height: 250px; /* Height that keeps image visible */
+  object-fit: cover;
+  border-radius: 8px;
+ 
+}
+
+.graphic-img{
+  border: 5px solid #0f2027; /* Light gray border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  padding: 0;
+  border-radius: 10px;
+}
+
+.project-slide {
+  height: 100vh; /* or a specific fixed height */
+  margin: 0;
+  padding: 0;
+  
+}
+
+.project-slide .col-md-6 {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.project-slide h3 {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.project-slide .col-md-6 img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.slide{
+  background-color: #0f2027;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4)
+}
+
+.col-md-6 p{
+  font-size: 15px;
+}
 @media (max-width: 768px) {
   .intro-section h1 {
     font-size: 2.3rem;
@@ -174,5 +326,10 @@ form textarea:focus {
 
   .intro-section p {
     font-size: 0.95rem;
+  }
+
+  .project-slide .col-md-6 {
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
