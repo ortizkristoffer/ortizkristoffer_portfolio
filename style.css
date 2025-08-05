@@ -53,10 +53,6 @@ body {
   color: white;
 }
 
-
-
-
-
 .intro-section {
   min-height: 100vh;
   display: flex;
@@ -67,7 +63,6 @@ body {
   transition: all 0.4s ease-in-out;
   flex-direction: column;
 }
-
 
 .intro-section h1,
 .text-content h1 {
@@ -267,9 +262,8 @@ form textarea:focus {
 .small-grid img {
   width: 100%;
   height: 250px; /* Height that keeps image visible */
-  object-fit: cover;
-  border-radius: 8px;
- 
+  object-fit: cover; 
+  border-radius: 10px;
 }
 
 .graphic-img{
@@ -277,6 +271,9 @@ form textarea:focus {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
   padding: 0;
   border-radius: 10px;
+  opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
 }
 
 .project-slide {
@@ -315,6 +312,328 @@ form textarea:focus {
 .col-md-6 p{
   font-size: 15px;
 }
+
+.custom-btn {
+  background-color: #00d9ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #00b3cc;
+  transform: scale(1.05);
+}
+
+/* Change the modal content background */
+.custom-modal-bg {
+  background-color: #0f2027; /* Example: dark gray */
+  color: #ffffff; /* Set text color to white for contrast */
+}
+
+/* Apply background color to scrollable modal body */
+.custom-modal-bg .modal-body {
+  background-color: #0f2027;
+}
+
+/* Optional: Style modal header and footer too */
+.custom-modal-bg .modal-header,
+.custom-modal-bg .modal-footer {
+  background-color: #0f2027;
+  border: none; /* Remove borders if desired */
+}
+
+/* Optional: Customize scrollbar if needed */
+.custom-modal-bg .modal-body::-webkit-scrollbar {
+  width: 10px;
+}
+.custom-modal-bg .modal-body::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 5px;
+}
+.custom-modal-bg .modal-body::-webkit-scrollbar-track {
+  background-color: #2a2a2a;
+}
+
+
+.modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+}
+.btn-x{
+  background-color: #ccc;
+}
+.img-fluid {
+  border-radius: 8px;
+  width: 100%;
+  height: 150px;         /* Show full image without cropping */
+  cursor: pointer;
+  transition: transform 0.2s;
+  
+}
+.modal-body .img-fluid{
+  border: 2px solid #ccc; /* Light gray border */
+}
+.img-fluid:hover {
+  transform: scale(1.02);
+}
+
+/* Fullscreen Overlay */
+#fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1055;
+}
+
+#fullscreenOverlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+
+.close-overlay {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  z-index: 1056;
+}
+
+
+/* Navigation buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1056;
+  padding: 0 15px;
+}
+
+.left-btn {
+  left: 20px;
+}
+
+.right-btn {
+  right: 20px;
+}
+
+.nav-btn:hover {
+  color: #ccc;
+}
+
+/* Transitions */
+
+/* HOME */
+.hidden-before-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: 1s;
+}
+
+/* When it's ready, show it */
+.hidden-before-load.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+/* Animate each <p> element (pop-in) */
+.pop-up {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popUp 0.3s ease-out forwards;
+}
+
+/* Delays for each <p> */
+.pop-up:nth-of-type(1) { animation-delay: 1.5s; }
+.pop-up:nth-of-type(2) { animation-delay: 1.8s; }
+.pop-up:nth-of-type(3) { animation-delay: 2.1s; }
+
+/* Optional: fade-slide for headers */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.fade-slide:nth-child(1) { animation-delay: 0.2s; }
+.fade-slide:nth-child(2) { animation-delay: 0.4s; }
+.fade-slide:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ABOUT */
+/* Initial state before animation */
+.fade-in-bottom,
+.slide-in-left {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+/* Special transform for sliding left */
+.slide-in-left {
+  transform: translateX(-50px);
+}
+
+/* Animation class to show content */
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-in-out;
+  pointer-events: auto;
+}
+
+/* SERVICES */
+/* Base hidden state */
+.slide-in-left-2,
+.slide-in-top,
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(0); /* default to avoid flicker */
+  transition: all 0.8s ease-in-out;
+}
+
+/* Specific directions */
+.slide-in-left-2 {
+  transform: translateX(-100px);
+}
+
+.slide-in-right {
+  transform: translateX(100px);
+}
+
+.slide-in-top {
+  transform: translateY(-100px);
+}
+
+/* When animated */
+.services-animate {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* PROJECTS */
+
+/* SOFTWARE */
+/* Start hidden */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+/* Add this when element is visible */
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* GRAPHICS */
+/* Fade-in from top */
+.graphics-fade-in-top {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Fade-in from bottom */
+.graphics-fade-in-bottom {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When element is in view */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.from-left {
+  transform: translateX(-100px);
+}
+
+.from-right {
+  transform: translateX(100px);
+}
+
+.from-top {
+  transform: translateY(-100px);
+}
+
+.from-bottom {
+  transform: translateY(100px);
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* CONTACT */
+.fade-in-left,
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-left {
+  transform: translateX(-50px);
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+/* Responsive Styles */
+
 @media (max-width: 768px) {
   .intro-section h1 {
     font-size: 2.3rem;
