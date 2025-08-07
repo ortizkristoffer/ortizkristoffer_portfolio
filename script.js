@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // Predefined image lists for each topic
 const imageMap = {
   taskmanagement: [
@@ -137,8 +136,6 @@ document.getElementById('nextImage').addEventListener('click', () => {
   currentImageIndex = (currentImageIndex + 1) % currentImageList.length;
   openFullscreenImage(currentImageList[currentImageIndex]);
 });
-
-
 
 
 // Transitions

@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link rel="stylesheet" href="style.css" />
-  <title>Ortiz Kristoffer</title>
+  <link rel="icon" type="image/png" href="sources/android-chrome-512x512.png" sizes="512x512" />
+
+  <title>Blurry Face</title>
 </head>
 
 <body>
@@ -73,7 +75,7 @@
       <div class="hidden-before-load">
         <p class="pop-up">Your tech partner in building fast, functional, and future-ready apps.</p>
         <p class="pop-up">From concept to code — I bring your vision to life.</p>
-        <p class="pop-up">Let’s build something your users will love.</p> 
+        <p class="pop-up">Let’s build something your users will love.</p>
         <a href="#contact" class="fade-slide">Contact</a>
       </div>
     </div>
@@ -116,7 +118,7 @@
       </div>
     </div>
 
-    <div class="profile-div d-flex align-items-center fade-in-bottom ">
+    <div class="profile-div fade-in-bottom ">
       <img class="profile" src="sources/profile.png" alt="Profile picture" />
     </div>
   </div>
@@ -301,7 +303,7 @@
 
   <div id="graphics" class="container d-flex justify-content-around align-items-center fade-in-right">
     <div class="container small-grid">
-      <div class="row row-cols-2 g-3">
+      <div class="row row-cols-1 row-cols-md-2 g-3">
         <div class="col graphic-img from-left">
           <img src="graphics/4.png" alt="Image 4" />
         </div>
@@ -344,29 +346,34 @@
             incredible together. Can’t wait to hear from you!
           </p>
 
-          <div class="contact-icons d-flex p-md-3">
+          <div class="contact-icons d-flex justify-content-center gap-3">
             <div class="contact-item">
-              <img src="icons/linkedin.png" alt="linkedin_logo" />
-              <a href="https://www.linkedin.com/in/kristofferortiz/">Kristoffer Ortiz</a>
+              <a href="https://www.linkedin.com/in/kristofferortiz/" target="_blank" rel="noopener noreferrer">
+                <img src="icons/linkedin.png" alt="LinkedIn Profile" />
+              </a>
             </div>
             <div class="contact-item">
-              <img src="icons/gmail.png" alt="gmail_logo" />
-              <a
-                href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFdPnSvzqRZNXMTkqFWZbcJJZqMcSjqjMKqgmWPLPTDHrTHNnDgqCXJcWLvGfsQJNpjvbX">kristofferaortiz@gmail.com</a>
+              <a href="https://github.com/ortizkristoffer"> <img src="icons/github.png"
+                  alt="github_logo" /></a>
+              </div>
+            <div class="contact-item">
+              <a href="https://www.facebook.com/kristoffer.ortiz.12"><img src="icons/facebook.png"
+                  alt="facebook_logo" /></a>
             </div>
+            <div class="contact-item">
+              <a href="https://www.instagram.com/kristortiz/"> <img src="icons/instagram.png"
+                  alt="instagram_logo" /></a>
+            </div>
+            <div class="contact-item">
+              <a href="https://www.tiktok.com/@blurryfce02?lang=en"> <img src="icons/tiktok.png"
+                  alt="tiktok_logo" /></a>
+            </div>
+            <div class="contact-item">
+              <a href="https://www.threads.com/@kristortiz"> <img src="icons/threads.png"
+                  alt="threads_logo" /></a>
+            </div>
+            
 
-            <div class="contact-item">
-              <img src="icons/facebook.png" alt="facebook_logo" />
-              <a href="https://www.facebook.com/kristoffer.ortiz.12">Kristoffer Amican Ortiz</a>
-            </div>
-            <div class="contact-item">
-              <img src="icons/instagram.png" alt="instagram_logo" />
-              <a href="https://www.instagram.com/kristortiz/">@kristortiz</a>
-            </div>
-            <div class="contact-item">
-              <img src="icons/phone.png" alt="phone_logo" />
-              <p>+63 968 498 9399</p>
-            </div>
           </div>
         </div>
 
@@ -375,25 +382,25 @@
           <div class="card shadow border-0 form">
             <div class="card-body p-4">
               <h4 class="mb-2 text-center">Contact Me</h4>
-              <form>
+              <form  action="https://formspree.io/f/mzzvkzbk" method="POST">
                 <div class="mb-3">
                   <label for="name" class="form-label text-light">Full Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Your name" required />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your name" required />
                 </div>
 
                 <div class="mb-3">
                   <label for="email" class="form-label text-light">Email Address</label>
-                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required />
+                  <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" required />
                 </div>
 
                 <div class="mb-3">
                   <label for="subject" class="form-label text-light">Subject</label>
-                  <input type="text" class="form-control" id="subject" placeholder="Subject" />
+                  <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" />
                 </div>
 
                 <div class="mb-3">
                   <label for="message" class="form-label text-light">Message</label>
-                  <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."
+                  <textarea class="form-control" name="message" id="message" rows="4" placeholder="Type your message here..."
                     required></textarea>
                 </div>
 
