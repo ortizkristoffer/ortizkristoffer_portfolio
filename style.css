@@ -1,4 +1,4 @@
-:root{
+:root {
   --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
@@ -446,6 +446,7 @@ form textarea:focus {
   color: #ccc;
 }
 
+
 /* Transitions */
 
 /* HOME */
@@ -642,7 +643,13 @@ form textarea:focus {
 /* Responsive Styles */
 
 @media (max-width: 768px) {
+
+
   /* Project Page */
+  .small-grid img {
+    height: auto;
+  }
+
   .project-slide {
     flex-direction: column;
     height: auto;
@@ -674,7 +681,8 @@ form textarea:focus {
     font-size: 2.3rem;
   }
 
-  .modal-body #projectDescription, .modal-body #imageGrid {
+  .modal-body #projectDescription,
+  .modal-body #imageGrid {
     padding: 0 !important;
   }
 
