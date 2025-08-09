@@ -252,3 +252,119 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300); // Delay to allow scroll first
   });
 });
+
+
+// CANVAS ANIMATION
+ // --------- FOG EFFECT ---------
+ const fogCanvas = document.getElementById("fogCanvas");
+ const fogCtx = fogCanvas.getContext("2d");
+
+ fogCanvas.width = window.innerWidth;
+ fogCanvas.height = window.innerHeight;
+
+ // Generate fog particles
+ const fogParticles = [];
+ const numFogParticles = 8; // large shapes
+
+ for (let i = 0; i < numFogParticles; i++) {
+   fogParticles.push({
+     x: Math.random() * fogCanvas.width,
+     y: Math.random() * fogCanvas.height,
+     radius: Math.random() * 400 + 200,
+     speedX: (Math.random() - 0.5) * 0.2,
+     speedY: (Math.random() - 0.5) * 0.2,
+     opacity: Math.random() * 0.1 + 0.05
+   });
+ }
+
+ function drawFog() {
+   fogCtx.clearRect(0, 0, fogCanvas.width, fogCanvas.height);
+   fogParticles.forEach(p => {
+     fogCtx.beginPath();
+     const gradient = fogCtx.createRadialGradient(p.x, p.y, p.radius * 0.3, p.x, p.y, p.radius);
+     gradient.addColorStop(0, `rgba(200, 200, 200, ${p.opacity})`);
+     gradient.addColorStop(1, "rgba(200, 200, 200, 0)");
+     fogCtx.fillStyle = gradient;
+     fogCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+     fogCtx.fill();
+
+     // Move fog
+     p.x += p.speedX;
+     p.y += p.speedY;
+
+     // Wrap around edges
+     if (p.x < -p.radius) p.x = fogCanvas.width + p.radius;
+     if (p.x > fogCanvas.width + p.radius) p.x = -p.radius;
+     if (p.y < -p.radius) p.y = fogCanvas.height + p.radius;
+     if (p.y > fogCanvas.height + p.radius) p.y = -p.radius;
+   });
+
+   requestAnimationFrame(drawFog);
+ }
+
+ // --------- ASH EFFECT ---------
+ const ashCanvas = document.getElementById("ashCanvas");
+ const ashCtx = ashCanvas.getContext("2d");
+
+ ashCanvas.width = window.innerWidth;
+ ashCanvas.height = window.innerHeight;
+
+ const ashParticles = [];
+ const numAshParticles = 100;
+
+ for (let i = 0; i < numAshParticles; i++) {
+   ashParticles.push({
+     x: Math.random() * ashCanvas.width,
+     y: Math.random() * ashCanvas.height,
+     width: Math.random() * 6 + 3,
+     height: Math.random() * 3 + 1.5,
+     speedX: (Math.random() - 0.5) * 1.5,
+     speedY: (Math.random() - 0.5) * 1.5,
+     rotation: Math.random() * Math.PI * 2,
+     rotationSpeed: (Math.random() - 0.5) * 0.02,
+     opacity: Math.random() * 0.5 + 0.3
+   });
+ }
+
+ function drawAsh() {
+   ashCtx.clearRect(0, 0, ashCanvas.width, ashCanvas.height);
+   ashParticles.forEach(p => {
+     ashCtx.save();
+     ashCtx.translate(p.x, p.y);
+     ashCtx.rotate(p.rotation);
+     ashCtx.fillStyle = `rgba(200, 200, 200, ${p.opacity})`;
+     ashCtx.fillRect(-p.width / 2, -p.height / 2, p.width, p.height);
+     ashCtx.restore();
+
+     p.x += p.speedX;
+     p.y += p.speedY;
+     p.rotation += p.rotationSpeed;
+
+     if (p.x < 0) p.x = ashCanvas.width;
+     if (p.x > ashCanvas.width) p.x = 0;
+     if (p.y < 0) p.y = ashCanvas.height;
+     if (p.y > ashCanvas.height) p.y = 0;
+   });
+
+   requestAnimationFrame(drawAsh);
+ }
+
+ // Resize handling
+ window.addEventListener("resize", () => {
+   fogCanvas.width = window.innerWidth;
+   fogCanvas.height = window.innerHeight;
+   ashCanvas.width = window.innerWidth;
+   ashCanvas.height = window.innerHeight;
+ });
+
+ // Start animations
+ drawFog();
+ drawAsh();
+
+
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+    e.preventDefault();
+  }
+});

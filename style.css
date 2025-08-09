@@ -1,3 +1,7 @@
+:root{
+  --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,25 +10,33 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: var(--bg);
   color: #ffffff;
   margin: 0;
   min-height: 100vh;
+}
+
+#fogCanvas,
+#ashCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 .navbar {
   position: fixed;
   width: 100%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: var(--bg);
   z-index: 1000;
 }
+
 .container {
   min-height: 100vh;
   padding-top: 2rem;
 }
 
-/* Make dropdown button look like other nav links */
 .custom-dropdown {
   background-color: transparent;
   border: none;
@@ -37,19 +49,17 @@ body {
   background-color: transparent;
 }
 
-/* Make the dropdown menu match the navbar dark background */
 .custom-dropdown-menu {
-  background-color: #212529; /* dark gray (matches navbar-dark default) */
+  background-color: #212529;
   border: none;
 }
 
-/* Make dropdown items white */
 .custom-dropdown-menu .dropdown-item {
   color: white;
 }
 
 .custom-dropdown-menu .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* subtle white highlight */
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
@@ -75,6 +85,7 @@ body {
 h4 {
   color: #00d9ff;
 }
+
 .intro-section h2 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -122,21 +133,22 @@ h4 {
 }
 
 .profile-div {
-  height: 100%; 
-  
+  height: 100%;
+
 }
 
 .profile {
   min-height: 100%;
   width: auto;
-  border-bottom: 3px solid #ccc; 
+  border-bottom: 3px solid #ccc;
 }
 
 .education h6 {
   font-weight: bold;
 }
+
 .separator {
-  font-size: 40px; /* Increase size */
+  font-size: 40px;
 }
 
 .content {
@@ -144,15 +156,6 @@ h4 {
   text-align: justify;
   margin-top: 1.5rem;
 }
-
-.icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 1.2rem;
-}
-
 
 .icons img,
 .contact-icons img {
@@ -166,9 +169,11 @@ h4 {
   transition: transform 0.2s ease-in-out;
 }
 
-.icons img:hover {
+.icons img:hover,
+.contact-item a img:hover {
   transform: scale(1.1);
   border-color: #007bff;
+  cursor: pointer;
 }
 
 form input,
@@ -195,7 +200,7 @@ form textarea:focus {
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 10px; /* space between image and link */
+  gap: 10px;
   margin: 10px 0;
 }
 
@@ -203,14 +208,17 @@ form textarea:focus {
   width: 50px;
   height: 50px;
 }
-.contact-item p{
+
+.contact-item p {
   align-self: center;
   margin: 0;
   font-weight: 500;
   font-family: 'Segoe UI', sans-serif;
 
 }
-.contact-item a, .contact-item {
+
+.contact-item a,
+.contact-item {
   color: white;
   font-weight: 500;
   text-decoration: none;
@@ -223,17 +231,17 @@ form textarea:focus {
   color: #799EFF;
 }
 
-.card{
+.card {
   background-color: #203a43;
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-  
+
 }
 
-.row{
+.row {
   margin-top: 5rem;
 }
 
-.card h5{
+.card h5 {
   font-family: "Domine", sans-serif;
   font-size: 1.2rem;
   color: #00d9ff;
@@ -241,13 +249,13 @@ form textarea:focus {
 }
 
 .carousel-item {
-  height: 500px; /* Or any height you want */
+  height: 500px;
   position: relative;
-  
+
 }
 
 .carousel-item img {
-  height: 100%; /* Match parent height */
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
@@ -259,32 +267,32 @@ form textarea:focus {
 
 .small-grid img {
   width: 100%;
-  height: 250px; /* Height that keeps image visible */
-  object-fit: cover; 
+  height: 250px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-.graphic-img{
-  border: 5px solid #0f2027; /* Light gray border */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+.graphic-img {
+  border: 5px solid #0f2027;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   padding: 0;
   border-radius: 10px;
   opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
+  transform: translateY(20px);
+  transition: all 1s ease;
 }
 
 .project-slide {
-  height: 100vh; /* or a specific fixed height */
+  height: 100vh;
   margin: 0;
   padding: 0;
-  
+
 }
 
 .project-slide .col-md-6 {
   height: 100%;
   padding: 0;
-  
+
 }
 
 .project-slide h3 {
@@ -300,12 +308,12 @@ form textarea:focus {
   object-fit: cover;
 }
 
-.slide{
+.slide {
   background-color: #0f2027;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4)
 }
 
-.col-md-6 p{
+.col-md-6 p {
   font-size: 15px;
 }
 
@@ -325,57 +333,56 @@ form textarea:focus {
   transform: scale(1.05);
 }
 
-/* Change the modal content background */
 .custom-modal-bg {
-  background-color: #0f2027; /* Example: dark gray */
-  color: #ffffff; /* Set text color to white for contrast */
+  background-color: #0f2027;
+  color: #ffffff;
 }
 
-/* Apply background color to scrollable modal body */
 .custom-modal-bg .modal-body {
   background-color: #0f2027;
 }
 
-/* Optional: Style modal header and footer too */
 .custom-modal-bg .modal-header,
 .custom-modal-bg .modal-footer {
   background-color: #0f2027;
-  border: none; /* Remove borders if desired */
+  border: none;
 }
 
-/* Optional: Customize scrollbar if needed */
 .custom-modal-bg .modal-body::-webkit-scrollbar {
   width: 10px;
 }
+
 .custom-modal-bg .modal-body::-webkit-scrollbar-thumb {
   background-color: #555;
   border-radius: 5px;
 }
+
 .custom-modal-bg .modal-body::-webkit-scrollbar-track {
   background-color: #2a2a2a;
 }
 
-
 .modal-body {
   max-height: 80vh;
   overflow-y: auto;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-
+  background: var(--bg);
 }
-.btn-x{
+
+.btn-x {
   background-color: #ccc;
 }
+
 .img-fluid {
   border-radius: 8px;
   width: 100%;
-  height: 150px;         /* Show full image without cropping */
+  height: 150px;
   cursor: pointer;
   transition: transform 0.2s;
-  
 }
-.modal-body .img-fluid{
-  border: 2px solid #ccc; /* Light gray border */
+
+.modal-body .img-fluid {
+  border: 2px solid #ccc;
 }
+
 .img-fluid:hover {
   transform: scale(1.02);
 }
@@ -448,40 +455,54 @@ form textarea:focus {
   transition-delay: 1s;
 }
 
-/* When it's ready, show it */
 .hidden-before-load.show {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 1s;
 }
 
-/* Animate each <p> element (pop-in) */
 .pop-up {
   opacity: 0;
   transform: scale(0.8);
   animation: popUp 0.3s ease-out forwards;
 }
 
-/* Delays for each <p> */
-.pop-up:nth-of-type(1) { animation-delay: 1.5s; }
-.pop-up:nth-of-type(2) { animation-delay: 1.8s; }
-.pop-up:nth-of-type(3) { animation-delay: 2.1s; }
+.pop-up:nth-of-type(1) {
+  animation-delay: 1.5s;
+}
 
-/* Optional: fade-slide for headers */
+.pop-up:nth-of-type(2) {
+  animation-delay: 1.8s;
+}
+
+.pop-up:nth-of-type(3) {
+  animation-delay: 2.1s;
+}
+
 .fade-slide {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease-out forwards;
 }
-.fade-slide:nth-child(1) { animation-delay: 0.2s; }
-.fade-slide:nth-child(2) { animation-delay: 0.4s; }
-.fade-slide:nth-child(3) { animation-delay: 0.6s; }
+
+.fade-slide:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.fade-slide:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.fade-slide:nth-child(3) {
+  animation-delay: 0.6s;
+}
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -493,17 +514,18 @@ form textarea:focus {
     opacity: 0;
     transform: scale(0.8);
   }
+
   60% {
     opacity: 1;
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
 /* ABOUT */
-/* Initial state before animation */
 .fade-in-bottom,
 .slide-in-left {
   opacity: 0;
@@ -511,12 +533,10 @@ form textarea:focus {
   transition: all 0.8s ease;
 }
 
-/* Special transform for sliding left */
 .slide-in-left {
   transform: translateX(-50px);
 }
 
-/* Animation class to show content */
 .animate {
   opacity: 1;
   transform: translateY(0);
@@ -525,16 +545,14 @@ form textarea:focus {
 }
 
 /* SERVICES */
-/* Base hidden state */
 .slide-in-left-2,
 .slide-in-top,
 .slide-in-right {
   opacity: 0;
-  transform: translateX(0); /* default to avoid flicker */
+  transform: translateX(0);
   transition: all 0.8s ease-in-out;
 }
 
-/* Specific directions */
 .slide-in-left-2 {
   transform: translateX(-100px);
 }
@@ -547,7 +565,6 @@ form textarea:focus {
   transform: translateY(-100px);
 }
 
-/* When animated */
 .services-animate {
   opacity: 1;
   transform: translateX(0) translateY(0);
@@ -556,33 +573,28 @@ form textarea:focus {
 /* PROJECTS */
 
 /* SOFTWARE */
-/* Start hidden */
 .fade-in {
   opacity: 0;
   transition: opacity 1s ease-in;
 }
 
-/* Add this when element is visible */
 .fade-in.visible {
   opacity: 1;
 }
 
 /* GRAPHICS */
-/* Fade-in from top */
 .graphics-fade-in-top {
   opacity: 0;
   transform: translateY(-30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Fade-in from bottom */
 .graphics-fade-in-bottom {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* When element is in view */
 .visible {
   opacity: 1;
   transform: translateY(0);
@@ -626,12 +638,9 @@ form textarea:focus {
   transform: translateX(0);
 }
 
-
-
 /* Responsive Styles */
 
 @media (max-width: 768px) {
-
   /* Project Page */
   .project-slide {
     flex-direction: column;
@@ -650,17 +659,22 @@ form textarea:focus {
   .project-slide h3 {
     font-size: 1.1rem;
   }
+
   .carousel-item {
     overflow-y: auto;
   }
-  
-  .carousel-item .col-md-6 img{
+
+  .carousel-item .col-md-6 img {
     height: 200px;
   }
 
- 
+
   .intro-section h1 {
     font-size: 2.3rem;
+  }
+
+  .modal-body #projectDescription, .modal-body #imageGrid {
+    padding: 0 !important;
   }
 
   /* Homepage */
@@ -686,7 +700,7 @@ form textarea:focus {
     height: auto !important;
     padding: 7rem 1rem 2rem !important;
     overflow-x: hidden;
-    
+
   }
 
   .aboutme-content,
@@ -749,8 +763,6 @@ form textarea:focus {
     max-height: 200px;
     object-fit: cover;
   }
-  /* Sofware Page */
-  
 
   /* Graphics Page */
   #graphics {
